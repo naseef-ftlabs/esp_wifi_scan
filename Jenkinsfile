@@ -7,7 +7,9 @@ pipeline {
       }
       steps {
         sh 'idf.py build'
+      }
     }
+
     stage('Testing') {
       agent {
         docker { image 'throwtheswitch/madsciencelab' }
