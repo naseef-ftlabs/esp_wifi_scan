@@ -2,9 +2,11 @@ pipeline {
   agent any
   stages {
     stage('ESP-IDF Building') {
-        steps {
-            sh 'idf.py build'
-        }
+        agent {
+        docker { image 'espressif/idf' }
+      }
+      steps {
+        sh 'idf.py build'
     }
     stage('Testing') {
       agent {
