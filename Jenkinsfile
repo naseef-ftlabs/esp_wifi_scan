@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       agent {
-        docker { image 'espressif/esp32-ci-env' }
+        docker { image 'espressif/idf:release-v4.3' }
       }
       steps {
         sh 'idf.py build'
