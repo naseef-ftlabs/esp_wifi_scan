@@ -9,13 +9,5 @@ pipeline {
         sh 'idf.py build'
       }
     }
-    stage('Testing') {
-      agent {
-        docker { image 'throwtheswitch/madsciencelab' }
-      }
-      steps {
-        sh 'ceedling'
-      }
-    }
   }
 }
