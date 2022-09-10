@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       steps {
-        sh 'cd /var/lib/jenkins/workspace/'
-        sh 'pwd && ./idf.py build'
+        sh '/home/ftlabs/esp/esp-idf/tools/idf.py build'
       }
     }
   }
