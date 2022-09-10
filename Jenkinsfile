@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       steps {
-        sh 'idf.py build'
+        sh 'pwd && idf.py build'
       }
     }
   }
