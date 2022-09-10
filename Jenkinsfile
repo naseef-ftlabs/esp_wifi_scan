@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       steps {
-        sh 'echo "jenkins" | sudo -S su ftlabs && ./home/ftlabs/esp/esp-idf/export.sh'
-        sh 'echo "jenkins" | sudo -S su ftlabs && /home/ftlabs/esp/esp-idf/tools/idf.py build'
+        sh '. /home/ftlabs/esp/esp-idf/export.sh'
+        sh 'idf.py build'
       }
     }
   }
