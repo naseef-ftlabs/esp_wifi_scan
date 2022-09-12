@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       steps {
+        sh 'echo $IDF_PATH'
         sh 'cd ~/esp/esp-idf'
         sh 'pwd'
         sh 'printenv'
