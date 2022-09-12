@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'cd ~/esp/esp-idf'
         sh 'pwd'
-        sh '. export.sh'
+        sh '. /var/lib/jenkins/esp/esp-idf/export.sh'
         sh 'which idf.py'
 
          sh 'IDF_PATH="/var/lib/jenkins/esp/esp-idf"'
