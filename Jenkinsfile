@@ -4,7 +4,7 @@ pipeline {
     stage('ESP-IDF Building') {
       steps {
         sh 'export IDF_PATH=/var/lib/jenkins/esp/esp-idf'
-        sh '. "${IDF_PATH}/tools/detect_python.sh"'
+        sh '. /var/lib/jenkins/esp/esp-idf/tools/detect_python.sh"'
         sh'"$ESP_PYTHON" "${IDF_PATH}/tools/python_version_checker.py"'
 
         sh 'export IDF_TOOLS_EXPORT_CMD=${IDF_PATH}/export.sh'
