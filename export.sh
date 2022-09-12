@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 385cf1f7b02d65dcde43f3f2e4912fcfb32cb195
 # This script should be sourced, not executed.
 
 __realpath() {
