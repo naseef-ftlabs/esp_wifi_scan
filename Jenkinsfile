@@ -9,6 +9,7 @@ pipeline {
         sh 'alias python=python3'
         sh 'python3 /var/lib/jenkins/esp/esp-idf/tools/python_version_checker.py'
 
+        sh 'cd ~'
         sh '. /var/lib/jenkins/esp/esp-idf/export.sh'
         sh 'which idf.py'
       }
