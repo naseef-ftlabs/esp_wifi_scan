@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('ESP-IDF Building') {
       steps {
-        sh 'idf.py build'
+        sh 'export IDF_PATH=/var/lib/jenkins/esp/esp-idf'
+        sh '. "${IDF_PATH}/tools/detect_python.sh"'
+        sh'"$ESP_PYTHON" "${IDF_PATH}/tools/python_version_checker.py"'
+
+        sh 'export IDF_TOOLS_EXPORT_CMD=${IDF_PATH}/export.sh'
+        sh 'export IDF_TOOLS_INSTALL_CMD=${IDF_PATH}/install.sh'
+        sh 'IDF_ADD_PATHS_EXTRAS="${IDF_PATH}/components/esptool_py/esptool"'
+        sh 'IDF_ADD_PATHS_EXTRAS="${IDF_ADD_PATHS_EXTRAS}:${IDF_PATH}/components/espcoredump"'
+        sh 'IDF_ADD_PATHS_EXTRAS="${IDF_ADD_PATHS_EXTRAS}:${IDF_PATH}/components/partition_table"'
+        sh ' IDF_ADD_PATHS_EXTRAS="${IDF_ADD_PATHS_EXTRAS}:${IDF_PATH}/components/app_update"'
       }
     }
   }
