@@ -7,7 +7,7 @@ pipeline {
         sh '. /var/lib/jenkins/esp/esp-idf/tools/detect_python.sh'
         sh 'which python3'
         sh 'alias python=python3'
-        sh'python /var/lib/jenkins/esp/esp-idf/tools/python_version_checker.py'
+        sh 'python3 /var/lib/jenkins/esp/esp-idf/tools/python_version_checker.py'
 
         sh 'export IDF_TOOLS_EXPORT_CMD=${IDF_PATH}/export.sh'
         sh 'export IDF_TOOLS_INSTALL_CMD=${IDF_PATH}/install.sh'
